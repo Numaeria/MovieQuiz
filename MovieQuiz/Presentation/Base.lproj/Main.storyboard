@@ -29,16 +29,16 @@
                                 <rect key="frame" x="20" y="106" width="374" height="722"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ab0-qE-lK1">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hr-XW-AF0" userLabel="Question Title Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="285.5" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                                 <color key="textColor" name="YP White (iOS)"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="1/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWK-sY-EUX" userLabel="Index Label">
-                                                <rect key="frame" x="285.5" y="0.0" width="88.5" height="24"/>
+                                                <rect key="frame" x="338" y="0.0" width="36" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                                 <color key="textColor" name="YP White (iOS)"/>
                                                 <nil key="highlightedColor"/>
@@ -46,14 +46,14 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bj3-BY-nUH" userLabel="Preview Image">
-                                        <rect key="frame" x="0.0" y="44" width="374" height="561"/>
+                                        <rect key="frame" x="0.0" y="43.5" width="374" height="561"/>
                                         <color key="backgroundColor" name="YP White (iOS)"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bj3-BY-nUH" secondAttribute="height" multiplier="2:3" id="VIL-AI-SqH"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше чем 5?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyY-ca-qzR" userLabel="Question Label">
-                                        <rect key="frame" x="0.0" y="625" width="374" height="17"/>
+                                        <rect key="frame" x="0.0" y="624.5" width="374" height="17.5"/>
                                         <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
                                         <color key="textColor" name="YP White (iOS)"/>
                                         <nil key="highlightedColor"/>
@@ -118,7 +118,9 @@
                     <connections>
                         <outlet property="counterLabel" destination="hWK-sY-EUX" id="v9h-Zu-ifp"/>
                         <outlet property="imageView" destination="bj3-BY-nUH" id="ScF-lD-MGg"/>
+                        <outlet property="noButton" destination="YbF-NO-V3N" id="BGy-Z0-b3X"/>
                         <outlet property="textLabel" destination="iyY-ca-qzR" id="Rmh-aE-tiD"/>
+                        <outlet property="yesButton" destination="bX6-GA-rHW" id="TKw-SL-OvM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
