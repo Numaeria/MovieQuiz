@@ -46,6 +46,7 @@ class QuestionFactory: QuestionFactoryProtocol {
             text: "Рейтинг этого фильма больше чем 6?",
             correctAnswer: false)
     ]
+    
     func setup(delegate: QuestionFactoryDelegate) {
            self.delegate = delegate
        }
@@ -55,7 +56,7 @@ class QuestionFactory: QuestionFactoryProtocol {
             delegate?.didReceiveNextQuestion(question: nil)
             return
         }
-        
+
         let question = questions[safe: index]
         delegate?.didReceiveNextQuestion(question: question)
     }
