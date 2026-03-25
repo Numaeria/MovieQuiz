@@ -40,8 +40,9 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     private let questionsAmount: Int = 10
     private var questionFactory: QuestionFactoryProtocol?
     private var currentQuestion: QuizQuestion?
-    private var alertPresenter = AlertPresenter()
-
+    private var alertPresenter = ResultAlertPresenter()
+    private let statisticService = StatisticService()
+    
     
     @IBAction private func noButtonClicked(_ sender: Any) {
         guard let currentQuestion = currentQuestion else {
@@ -108,9 +109,19 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     }
     
     func show(quiz result: QuizResultsViewModel) {
-        let model = AlertModel(title: result.title, message: result.text, buttonText: result.buttonText) { [weak self] in
+        statisticService.store(correct: correctAnswers, total: questionsAmount)
+        
+        let bestGame = statisticService.bestGame
+        let message = """
+               Ваш результат: \(correctAnswers)/\(questionsAmount)
+               Количество сыгранных квизов: \(statisticService.gamesCount)
+               Рекорд: \(bestGame.correct)/\(bestGame.total) (\(bestGame.date.dateTimeString))
+               Средняя точность: \(String(format: "%.2f", statisticService.totalAccuracy))%
+               """
+        
+        let model = AlertModel(title: result.title, message: message, buttonText: result.buttonText) { [weak self] in
             guard let self = self else { return }
-
+            
             self.currentQuestionIndex = 0
             self.correctAnswers = 0
             self.questionFactory?.requestNextQuestion()
