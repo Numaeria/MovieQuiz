@@ -41,7 +41,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     private var questionFactory: QuestionFactoryProtocol?
     private var currentQuestion: QuizQuestion?
     private var alertPresenter = ResultAlertPresenter()
-    private let statisticService = StatisticService()
+    private let statisticService: StatisticServiceProtocol = StatisticService()
     
     
     @IBAction private func noButtonClicked(_ sender: Any) {
